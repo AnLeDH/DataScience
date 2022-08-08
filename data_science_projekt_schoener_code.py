@@ -1,4 +1,8 @@
-# -*- coding: utf-8 -*-
+"""TO DO: 
+    - Ausgabe der Werte für lineare Regression sklearn --> Vergleich mit denen from scratch
+    - Implementieren und verstehen der restlichen Verfahren
+ """
+
 """
 Prepare Data
 """
@@ -128,8 +132,10 @@ def corr_coef(x, y):
 
 print('Regression Line: ', reg_line)
 R = corr_coef(x, y)
-print('Correlation Coef.: ', R)
-print('"Goodness of Fit": ', R**2)
+
+R2 = np.sum((x-x.mean())*(y-y.mean()))/(np.sqrt(np.sum((x-x.mean())**2))*(np.sqrt(np.sum((y-y.mean())**2))))
+print('Correlation Coef.: ', R2)
+print('"Goodness of Fit": ', R2**2)
 
 
 
